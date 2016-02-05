@@ -1,0 +1,24 @@
+*.seed
+*.log
+*.dat
+*.out
+*.pid
+*.gz
+*.idea
+*.pem
+*.crt
+*.pfx
+*.css
+*.map
+*.swp
+prepros*
+
+dist/**
+.sass-cache/**
+.tmp/**
+lib-cov/**
+node_modules/**
+bower_components/**
+
+#OS X specific files
+.DS_Store

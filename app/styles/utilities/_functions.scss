@@ -1,0 +1,16 @@
+@function calc-letter-spacing($distance) {
+	@return $distance/1000 + em;
+}
+
+@mixin bp($point) {
+	@if $point == tablet {
+		@media (max-width: $tablet) { @content; }
+	}
+	@else if $point == mobile {
+		@media (max-width: $mobile) { @content; }
+	}
+    @else if $point == not_mobile {
+        @media (min-width: $mobile) { @content; }
+    }
+
+}
