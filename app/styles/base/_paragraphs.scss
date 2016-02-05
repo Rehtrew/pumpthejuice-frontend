@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    _paragraphs
+    Created by krisztinavajda on 09/09/15.
+\*------------------------------------*/
+
+p{
+    font-size: 20px;
+    @include bp(mobile) {
+        font-size   : 15px;
+    }
+}
+
+.p--lg {
+    font-size: 22px;
+}
+
+.p--bold {
+    font-weight: 800;
+}

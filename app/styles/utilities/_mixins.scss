@@ -1,0 +1,12 @@
+@mixin positioner($top: 0, $left: 0, $bottom: 0, $right: 0, $position: absolute) {
+	position: $position;
+	top: $top;
+	left: $left;
+	right: $right;
+	bottom: $bottom;
+}
+
+@mixin quadratic($size, $prefix: '') {
+	#{$prefix}width: $size;
+	#{$prefix}height: $size;
+}

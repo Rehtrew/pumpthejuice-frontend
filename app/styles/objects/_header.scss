@@ -1,0 +1,31 @@
+header {
+	position    : fixed;
+	right       : 0;
+	left        : 0;
+	top         : 0;
+	z-index     : 500;
+	background 	: $color-white;
+	font-size 	: 0;
+
+	h2 {
+		font-size 	: 19px;
+		font-style 	: italic;
+		color 		: $color-white;
+		line-height : 95px;
+		width 	 	: 50%;
+		float 		: right;
+		background 	: $color-black;
+		span {
+			padding-left 	: 30px;
+		}
+	}
+
+	svg {
+		width 	 	: 35px;
+		position 	: absolute;
+		left 		: calc(50% - 35px);
+		top 		: 50%;
+		transform 	: translateX(-30px) translateY(-50%);
+	}
+
+}

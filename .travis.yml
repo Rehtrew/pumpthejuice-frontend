@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - '0.12'
+before_install:
+  - npm install -g bower
+  - bower install
+cache:
+  directories: node_modules
+notifications:
+  email: false
+deploy:
+  # Development environment
+  - provider: s3
+    access_key_id: AKIAJVEVP6A3NU2J7XHQ
+    secret_access_key:
+      secure: myaCG2U+ksGEW7E5evZYcagIfylBORtJX8+nyAgKBglZ9ltUBAv6eBTkUZ1oTF2UrJ+agM6QPTJ3Uh1/FEKubOd0CYxldkLS/u2XyfQudwbeOjxxnUbdNAUUPnu03faR4Hk0zmRlOsvQYkGzW1XpmLT9WTyDlXUSn9pEsbLCoSZT2t0WY/byDagmWYl4G0c+sN0+D+U4VjP+Agx30R8Q2aAZgy+WpaDFVTXd6fGsGJ1hCRqHyRpSVubEjPTLnjvw2vMj1KETDSdiHngSblSUUlC4qrm47rPio0INSUchjBzppbPNyujn2fq+Iwd7uwaihaJLJ1MDJM61rcabgtskDaUO+c5XXaHI/EGZXUvh15buzLk0fB89sstIrQXl8W8z+eZL0obRrFcsbaGalDRO8NNBy+LZaoLE7Hpeb2LlVsKlzvJMl1j43V40eo/oWDhLBvu/axFcg6b8/mfQbw+oY3OPKA6t/2yAiNS5FUxaBVoZjjE4MKodnyB3hMWIA7VkFHOPSYPb9NxQaSVYKL8B5sqV+CAFDVTOGdZCG51UqBsK0ISPCjkm9Ey+nlyeV2fQmrqrBjw6PGr6nNk1la5G/t402x8ys6Gnrmf5QO0FuRjjm+tdhCBHFRMe2nQ5l2LdyJazCrFRR14enGjE34mch8cn3i9Xs18gyIpv2vXn83Q=
+    bucket: shft-frontend-dev
+    local-dir: dist
+    skip_cleanup: true
+    acl: public_read
+    on:
+      repo: umweltdk/shft-frontend
+      branch: master

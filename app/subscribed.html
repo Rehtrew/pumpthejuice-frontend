@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en" ng-app="shft" ng-controller="appCtrl" class="ie9"><![endif]-->
+<!--[if IE 8]><html lang="en" ng-app="shft" ng-controller="appCtrl" class="ie8"><![endif]-->
+<html lang="en" ng-app="shft">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="description" content="SHFT Beskrivelse" />
+
+	<title>SHFT</title>
+
+
+	<meta property="og:title" content="SHFT" />
+	<meta property="og:description" content="SHFT Beskrivelse" />
+	<meta property="og:image" content="../media/shft-share.jpg" />
+
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/media/favs/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/media/favs/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/media/favs/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/media/favs/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/media/favs/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/media/favs/apple-touch-icon-120x120.png">
+	<link rel="icon" type="image/png" href="/media/favs/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/media/favs/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/media/favs/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/media/favs/manifest.json">
+	<link rel="shortcut icon" href="/media/favs/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="/media/favs/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+
+	<!--[if IE 8]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="styles/app.min.css"/>
+
+
+	<script src="scripts/vendor.js"></script>
+	<script src="scripts/app.js"></script>
+</head>
+
+<body class="submitted">
+<header>
+	<div class="logo" ng-click="scrollTo('intro')"></div>
+
+
+</header>
+	<main>
+		<a href class="menu--mobile_button" ng-class="{'active': showMobileMenu}" ng-click="showMobileMenu = !showMobileMenu"><span>+</span></a>
+		<ul  class="menu menu--mobile" ng-class="{'active': showMobileMenu}">
+			<li><a href ng-click="scrollTo('sign-off')">Del din idé</a></li>
+			<li><a href ng-click="scrollTo('description')">De 3 skridt</a></li>
+			<li><a href="http://kmd.dk" target="_blank">Kmd.dk</a></li>
+		</ul>
+		<section role="intro" ng-init="modalVisible = false;">
+			<div class="info-box" ng-click="modalVisible = true;">
+				<h1>You are now signed up and will receive latest news about SHFT</h1>
+				<a href="/" class="btn-outline">Back to site</a>
+			</div>
+			<video class="desktop" preload autoplay loop muted poster="media/video-cover.jpg">
+				<source src="media/video/shft-loop.mp4" type="video/mp4">
+				<source src="media/video/sunday_loop_short_v3.webm" type="video/webm">
+				<source src="media/video/sunday_loop_short_v3.ogv" type="video/ogg">
+			</video>
+		</section>
+
+		<footer>
+			<span>© SHFT 2015</span>
+		</footer>
+	</main>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-66813204-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+</body>
+
+</html>
