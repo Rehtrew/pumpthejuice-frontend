@@ -4,28 +4,107 @@ header {
 	left        : 0;
 	top         : 0;
 	z-index     : 500;
-	background 	: $color-white;
+	height 		: 95px;
+	//background 	: $color-white;
 	font-size 	: 0;
+
+	animation 	: header 1s ease both 100ms;
+
+
 
 	h2 {
 		font-size 	: 19px;
 		font-style 	: italic;
 		color 		: $color-white;
-		line-height : 95px;
-		width 	 	: 50%;
-		float 		: right;
+		height 		: 100%;
+		//width 	 	: 50%;
 		background 	: $color-black;
+		position 	: absolute;
+		left 		: 50%;
+		right 		: 0;
+		animation 	: t-e 1s ease both 200ms;
+		overflow 	: hidden;
+		font-weight : bold;
 		span {
 			padding-left 	: 30px;
+			font-weight : bold;
+			position 		: relative;
+			top 			: 50%;
+			transform 		: translateY(-50%);
+			display 		: block;
+			animation 		: title 1s ease both 200ms;
 		}
+	}
+
+	.left {
+		//width 		: 50%;
+		left 		: 0;
+		right 		: 50%;
+		overflow 	: hidden;
+		background 	: $color-white;
+		position 	: absolute;
+		top 		: 0;
+		height 		: 100%;
+		animation 	: l-e 1s ease both 400ms;
+
 	}
 
 	svg {
 		width 	 	: 35px;
 		position 	: absolute;
-		left 		: calc(50% - 35px);
+		right 		: 0;
 		top 		: 50%;
 		transform 	: translateX(-30px) translateY(-50%);
+		animation 	: logo 1s ease both 400ms;
 	}
 
+}
+
+@keyframes header {
+	from {
+		height 	: 50px;
+	}
+	to {
+		height 	: 95px;
+	}
+}
+
+@keyframes logo {
+	from {
+		right 	: 50px;
+		opacity : 0;
+	}
+	to {
+		right 	: 0;
+		opacity : 1;
+	}
+}
+
+@keyframes title {
+	from {
+		left	: 50px;
+		opacity : 0;
+	}
+	to {
+		left 	: 0;
+		opacity : 1;
+	}
+}
+
+@keyframes l-e {
+	0% {
+		left 		: 50%;
+	}
+	100% {
+		left 		: 0;
+	}
+}
+
+@keyframes t-e {
+	0% {
+		right 		: 50%;
+	}
+	100% {
+		right 		: 0;
+	}
 }

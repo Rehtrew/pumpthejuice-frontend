@@ -1,0 +1,104 @@
+/**
+ * _card
+ */
+
+.card {
+    background      : $color-white;
+    width           : 260px;
+    padding         : 30px;
+    text-align      : center;
+    display         : inline-block;
+    margin          : 10px;
+    overflow        : hidden;
+
+    animation       : card 1s ease both 500ms;
+
+    .img {
+        @include quadratic(80px);
+        background-size     : cover;
+        margin              : 0 auto 10px;
+        animation           : fade-in 1s ease both 600ms;
+        &[data-peer='cw'] {
+            background-image: url("../media/cw.png");
+        }
+        &[data-peer='ms'] {
+            background-image: url("../media/ms.png");
+        }
+    }
+
+    h2 {
+        font-size       : 18px;
+        text-transform  : none;
+        line-height     : 22px;
+        animation           : fade-in 1s ease both 700ms;
+
+        a {
+            color               : $color-primary;
+            text-decoration     : none;
+        }
+
+        span {
+            font-family : 'interfaceregular';
+            display     : block;
+            font-size   : 15px;
+            color       : #5e5e5e;
+        }
+    }
+    hr {
+        background      : #7f7f7f;
+        width           : 20px;
+        border          : none;
+        outline         : none;
+        height          : 1px;
+        margin          : 20px auto;
+        animation       : fade-in 1s ease both 800ms;
+    }
+
+    blockquote {
+        font-family     : "Georgia";
+        font-size       : 17px;
+        padding         : 0;
+        margin          : 0;
+        animation       : fade-in 1s ease both 900ms;
+        cite {
+            font-style  : italic;
+            font-weight : bold;
+            margin      : 10px 0 0;
+            font-size   : 12px;
+            display     : block;
+        }
+    }
+
+    .social {
+        animation       : fade-in 1s ease both 950ms;
+        a {
+            text-decoration     : none;
+            padding             : 0 10px;
+        }
+        svg {
+            max-width   : 20px;
+        }
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity     : 0;
+        transform   : translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform   : translateY(0);
+    }
+}
+
+@keyframes card {
+    from {
+        max-height  : 0;
+        padding     : 0 30px;
+    }
+    to {
+        max-height  : 400px;
+        padding     : 30px;
+    }
+}
