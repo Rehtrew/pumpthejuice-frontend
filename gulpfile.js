@@ -82,7 +82,10 @@ gulp.task('vendor', function() {
 	gulp.src([
 		paths.vendor  +'/modernizr/modernizr.js',
 		paths.vendor  +'/Snap.svg/dist/snap.svg-min.js',
+		paths.vendor  +'/lodash/lodash.js',
 		paths.vendor  +'/angular/angular.js',
+		paths.vendor  +'/angular-lazy-img/release/angular-lazy-img.min.js',
+		paths.vendor  +'/angular-sanitize/angular-sanitize.js',
 		paths.vendor  +'/angular-ui-router/release/angular-ui-router.min.js'
 	])
 	.pipe(concat('vendor.js'))

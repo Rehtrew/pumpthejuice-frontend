@@ -1,0 +1,33 @@
+/**
+ * _downloads
+ */
+
+.download {
+    background      : $color-white;
+    max-width       : 340px;
+    width           : 100%;
+    //padding         : 30px;
+    text-align      : center;
+    margin          : 0 auto;
+
+    img {
+        max-width   : calc(100% - 60px);
+        padding     : 30px;
+    }
+
+    .media {
+        background          : $color-grey;
+    }
+
+    a {
+        color               : $color-grey-dark;
+        font-family         : $font-bold;
+        border              : 2px solid $color-grey-dark;
+        text-decoration     : none;
+        text-transform      : uppercase;
+        letter-spacing      : calc-letter-spacing(125);
+        display             : inline-block;
+        padding             : 10px 20px;
+        margin              : 20px 0;
+    }
+}

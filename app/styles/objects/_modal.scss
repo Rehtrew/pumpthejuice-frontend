@@ -1,0 +1,51 @@
+.modal {
+    @include positioner(0,0,0,0,fixed);
+    z-index     : -1;
+    transition  : all 300ms ease;
+
+    .modal__backdrop {
+        z-index     : 1;
+        background  : $color-grey;
+        //opacity     : 0;
+        transition  : all 400ms ease;
+        position    : absolute;
+        border-radius : 100%;
+        @include quadratic(50px);
+
+
+
+
+        //@include positioner();
+    }
+
+    .modal__content {
+        position        : absolute;
+        opacity         : 0;
+        z-index         : 5;
+        transition      : all 300ms ease;
+        @include bp(mobile) {
+            width       : 100%;
+        }
+
+        img {
+            display     : block;
+            width       : 100%;
+        }
+    }
+
+    .pin__footer {
+        text-align      : center;
+    }
+
+    &.visible {
+        z-index : 9000;
+
+        .modal__backdrop {
+            //opacity         : 1;
+        }
+
+        .modal__content {
+            //opacity         : 1;
+        }
+    }
+}

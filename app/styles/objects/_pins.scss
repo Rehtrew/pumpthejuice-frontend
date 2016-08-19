@@ -1,0 +1,342 @@
+section.pins {
+    font-family : $font-regular;
+    font-size   : 0;
+    vertical-align  : top;
+    background  : $color-white;
+
+    .container {
+        width           : 50%;
+        display         : inline-block;
+        vertical-align  : top;
+    }
+
+    &.cols--10 {
+        .col {
+            width   : 10%;
+        }
+
+        .col--10, .col--9, .col--8, .col--7, .col--6 {
+            padding-top     : 260px;
+        }
+    }
+    &.cols--9 {
+        .col {
+            width   : 11.1%;
+        }
+        .title {
+            left    : 44.4%;
+        }
+        .col--9, .col--8, .col--7, .col--6, .col--5  {
+            padding-top     : 259px;
+        }
+    }
+    &.cols--8 {
+        .col {
+            width   : 12.5%;
+        }
+        .col--8, .col--7, .col--6, .col--5  {
+            padding-top     : 284px;
+        }
+    }
+    &.cols--7 {
+        .col {
+            width   : 14.285714286%;
+        }
+        .title {
+            left     : 42.857142857%;
+        }
+        .col--7, .col--6, .col--5, .col--4 {
+            padding-top     : 284px;
+        }
+    }
+    &.cols--6 {
+        .col {
+            width   : 16.666666667%;
+        }
+        .col--6, .col--5, .col--4 {
+            padding-top     : 284px;
+        }
+    }
+    &.cols--5 {
+        .col {
+            width   : 20%;
+        }
+        .title {
+            left    : 40%;
+        }
+        .col--3, .col--4, .col--5 {
+            padding-top     : 284px;
+        }
+    }
+    &.cols--4 {
+        .col {
+            width   : 25%;
+        }
+        .col--3, .col--4 {
+            padding-top     : 309px;
+        }
+    }
+    &.cols--3 {
+        .col {
+            width   : 33.3%;
+        }
+        .col--2, .col--3 {
+            padding-top     : 309px;
+        }
+        .title {
+            left    : 33.3%;
+        }
+    }
+
+    &.cols--1, &.cols--2 {
+        .col {
+            width           : 50%;
+            //padding-top     : 310px;
+
+            //.pin-holder {
+            //    width           : 50%;
+            //    vertical-align  : top;
+            //    display         : inline-block;
+            //}
+        }
+
+        .title {
+            left        : 0;
+            position    : relative;
+            border-top  : 1px solid #e5e5e5;
+            padding-bottom  : 40px;
+        }
+    }
+
+    .col {
+        //max-width   : 237px;
+        display     : inline-block;
+        font-size   : initial;
+        vertical-align  : top;
+
+
+    }
+
+    .title {
+        //width       : 100%;
+        font-size   : 14px;
+        display     : inline-block;
+        text-align  : left;
+        padding     : 40px 40px 100px;
+
+        position    : absolute;
+        z-index     : 30;
+        right       : 0;
+        left        : 50%;
+        background  : white;
+
+        .tabs {
+            a {
+                font-family     : $font-bold;
+                font-size       : 11px;
+                text-decoration : none;
+                font-weight     : normal;
+                letter-spacing  : calc-letter-spacing(65);
+                color           : darken($color-grey, 15);
+
+                &.active {
+                    color       : $color-grey-dark;
+                }
+            }
+        }
+
+
+        h2 {
+            font-family     : $font-light;
+            text-transform  : none;
+            color           : $color-primary;
+            font-size       : 32px;
+            font-weight     : normal;
+            line-height     : 46px;
+        }
+
+        p {
+            font-family     : $font-regular;
+            color           : #939393;
+            font-size       : 16px;
+            line-height     : 25px;
+            a {
+                color       : $color-black;
+            }
+            //max-width       : 50%;
+        }
+    }
+
+    .pin {
+        position    : relative;
+        background  : $color-black;
+
+
+        img {
+            width       : 100%;
+            min-height  : 100px;
+            display     : block;
+            margin      : 0;
+            padding     : 0;
+            transition  : all 450ms ease;
+            opacity     : 0;
+            transform   : scale(1);
+
+            &.success {
+                opacity     : 1;
+                transform   : scale(1);
+
+            }
+
+        }
+
+    }
+
+    .pin__hover {
+        @include positioner(0,0,78px,0);
+        z-index         : 10;
+        background      : rgba($color-grey-dark, .7);
+        opacity         : 0;
+        transition      : all 350ms ease;
+
+
+
+        svg {
+            width       : 30px;
+            position    : absolute;
+            top         : calc(50% - 15px);
+            left        : calc(50% - 15px);
+            transform   : scale(.5);
+            opacity     : 1;
+            transition  : all 300ms ease;
+
+            path {
+                fill        : $color-primary;
+            }
+        }
+
+        &:hover {
+            cursor          : pointer;
+            opacity     : 1;
+
+            +img {
+                transform   : scale(.8);
+            }
+
+            svg {
+                transform   : scale(1);
+                opacity     : 1;
+            }
+
+        }
+    }
+
+    .gif-control {
+        @include positioner(10px, auto, auto, 10px);
+        z-index             : 20;
+        background          : $color-white;
+        //padding             : 5px;
+        line-height         : 40px;
+        @include quadratic(40px);
+        transition          : all 350ms ease;
+
+        &:hover {
+            background      : $color-primary;
+
+            svg path {
+                fill        : $color-white;
+            }
+        }
+
+        &.playing {
+            .ico {
+                &:before, &:after {
+                    transform   : rotate(0deg);
+                    top         : 0;
+                    height      : 8px;
+                }
+                &:before {
+                    left        : 0;
+                }
+            }
+        }
+
+        .ico {
+            @include quadratic(10px);
+            display         : inline-block;
+            position        : relative;
+
+            &:before, &:after {
+                content     : '';
+                transition  : all 350ms ease;
+                width       : 2px;
+                height      : 5px;
+                background  : $color-white;
+                position    : absolute;
+                top         : 0;
+                left        : 5px;
+
+            }
+
+            &:before {
+                transform   : rotate(45deg);
+                top         : 3px;
+
+            }
+            &:after {
+                transform   : rotate(-45deg);
+            }
+        }
+        >span {
+            display         : inline-block;
+            vertical-align  : top;
+            font-size       : 11px;
+            font-family     : $font-bold;
+            text-transform  : uppercase;
+            letter-spacing  : calc-letter-spacing(60);
+            color           : $color-white;
+        }
+
+        svg {
+            width           : 15px;
+            display         : inline-block;
+            position        : relative;
+            top             : -4px;
+            //transform       : translateY(-50%);
+            path {
+                transition      : all 350ms ease;
+
+                fill        : $color-grey-dark;
+            }
+        }
+    }
+}
+
+.pin__footer {
+    padding         : 30px;
+    background      : $color-white;
+
+    a {
+        color               : darken($color-white, 20);
+        text-decoration     : none;
+        font-size           : 11px;
+        width               : calc(50% - 15px);
+        font-family         : $font-bold;
+        display             : inline-block;
+        &:hover {
+            cursor          : default;
+        }
+        span {
+            display         : inline-block;
+            margin-left     : 5px;
+        }
+    }
+    svg {
+        max-width       : 16px;
+        vertical-align  : middle;
+        display         : inline-block;
+        path {
+            fill    : darken($color-white, 20);
+        }
+    }
+}

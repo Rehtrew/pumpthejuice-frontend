@@ -6,4 +6,8 @@ body, html {
     @include quadratic(100%);
     margin      : 0;
     overflow    : hidden;
+
+    *, *:after, *:before {
+        box-sizing  : border-box;
+    }
 }

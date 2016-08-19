@@ -4,25 +4,66 @@
 
 .card {
     background      : $color-white;
-    width           : 260px;
-    padding         : 30px;
-    text-align      : center;
+    padding         : 0;
+    text-align      : left;
     display         : inline-block;
-    margin          : 10px;
-    overflow        : hidden;
-
+    //overflow        : hidden;
     animation       : card 1s ease both 500ms;
+    vertical-align  : bottom;
+    will-change     : transform;
+
+    position        : absolute;
+    bottom          : 0;
+    left            : 50%;
+    transform       : translateX(-50%);
+    z-index         : 50;
+
+    width           : 100%;
+    //max-width       : 800px;
+
+    @include bp(mobile) {
+        //top         : 115px;
+        //bottom      : 0;
+    }
+
+    .copy {
+        //width       : calc(50% - 100px);
+        text-align  : right;
+        float       : right;
+        position    : relative;
+        right       : 50%;
+        padding     : 50px;
+        animation   : copy-container-in 1s ease both 200ms;
+        @include bp(mobile) {
+            animation   : none;
+            right       : 0;
+            text-align  : center;
+            float       : none;
+            margin      : 0px 0 0;
+        }
+    }
 
     .img {
-        @include quadratic(80px);
-        background-size     : cover;
-        margin              : 0 auto 10px;
-        animation           : fade-in 1s ease both 600ms;
-        &[data-peer='cw'] {
-            background-image: url("../media/cw.png");
-        }
-        &[data-peer='ms'] {
-            background-image: url("../media/ms.png");
+        background-size     : contain;
+        animation           : media-in 1s ease both 200ms;
+        background-image    : url("../media/cw.jpg");
+        background-repeat   : no-repeat;
+        background-color    : #040404;
+        display             : inline-block;
+        position            : absolute;
+        top                 : -30px;
+        bottom              : -30px;
+        right               : 0;
+        width               : 50%;
+
+        @include bp(mobile) {
+            animation       : none;
+            display         : none;
+            right           : 50%;
+            border-radius   : 100%;
+            transform       : translateX(50%);
+            @include quadratic(100px);
+            top             : 30px;
         }
     }
 
@@ -30,10 +71,10 @@
         font-size       : 18px;
         text-transform  : none;
         line-height     : 22px;
-        animation           : fade-in 1s ease both 700ms;
+        animation       : copy-in 1s ease both 300ms;
 
         a {
-            color               : $color-primary;
+            color               : #fab613;
             text-decoration     : none;
         }
 
@@ -45,24 +86,26 @@
         }
     }
     hr {
-        background      : #7f7f7f;
-        width           : 20px;
+        background      : #e5e5e5;
+        width           : 100%;
         border          : none;
         outline         : none;
         height          : 1px;
         margin          : 20px auto;
-        animation       : fade-in 1s ease both 800ms;
+        animation       : line-in 1s ease both 800ms;
     }
 
     blockquote {
-        font-family     : "Georgia";
-        font-size       : 17px;
+        font-family     : "Georgia", "Times New Roman";
+        font-size       : 19px;
+        line-height     : 24px;
+        font-style      : italic;
+        font-weight     : normal;
         padding         : 0;
         margin          : 0;
-        animation       : fade-in 1s ease both 900ms;
+        animation       : copy-in 1s ease both 400ms;
         cite {
             font-style  : italic;
-            font-weight : bold;
             margin      : 10px 0 0;
             font-size   : 12px;
             display     : block;
@@ -70,35 +113,53 @@
     }
 
     .social {
-        animation       : fade-in 1s ease both 950ms;
+        animation       : copy-in 1s ease both 550ms;
+        position        : relative;
+        left            : -5px;
         a {
             text-decoration     : none;
             padding             : 0 10px;
         }
         svg {
-            max-width   : 20px;
+            max-width   : 25px;
         }
     }
 }
 
-@keyframes fade-in {
+
+@keyframes copy-in {
     from {
-        opacity     : 0;
-        transform   : translateY(-20px);
+        transform   : translateX(400px);
     }
     to {
-        opacity: 1;
-        transform   : translateY(0);
+        transform   : translateX(0);
     }
 }
 
-@keyframes card {
+@keyframes media-in {
     from {
-        max-height  : 0;
-        padding     : 0 30px;
+        background-position     : -500px 0;
+        width                   : 0%;
     }
     to {
-        max-height  : 400px;
-        padding     : 30px;
+        background-position     : 0 0;
+        width                   : 50%;
+    }
+}
+
+@keyframes copy-container-in {
+    from {
+        right           : 00%;
+    }
+    to {
+        right           : 50%;
+    }
+}
+@keyframes line-in {
+    from {
+        width           : 0;
+    }
+    to {
+        widht           : 100%;
     }
 }

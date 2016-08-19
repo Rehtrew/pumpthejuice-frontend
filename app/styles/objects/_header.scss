@@ -3,12 +3,14 @@ header {
 	right       : 0;
 	left        : 0;
 	top         : 0;
+	bottom 		: 0;
 	z-index     : 500;
+	//height 		: 100%;
 	height 		: 95px;
-	//background 	: $color-white;
+	background 	: $color-white;
 	font-size 	: 0;
 
-	animation 	: header 1s ease both 100ms;
+	animation 	: header 1s ease both 800ms;
 
 
 
@@ -21,7 +23,7 @@ header {
 		background 	: $color-black;
 		position 	: absolute;
 		left 		: 50%;
-		right 		: 0;
+		right 		: -100%;
 		animation 	: t-e 1s ease both 200ms;
 		overflow 	: hidden;
 		font-weight : bold;
@@ -32,14 +34,14 @@ header {
 			top 			: 50%;
 			transform 		: translateY(-50%);
 			display 		: block;
-			animation 		: title 1s ease both 200ms;
+			animation 		: title 1s ease both 400ms;
 		}
 	}
 
 	.left {
 		//width 		: 50%;
 		left 		: 0;
-		right 		: 50%;
+		right 		: 0;
 		overflow 	: hidden;
 		background 	: $color-white;
 		position 	: absolute;
@@ -52,9 +54,9 @@ header {
 	svg {
 		width 	 	: 35px;
 		position 	: absolute;
-		right 		: 0;
+		right 		: 50%;
 		top 		: 50%;
-		transform 	: translateX(-30px) translateY(-50%);
+		transform 	: translateX(50%) translateY(-50%);
 		animation 	: logo 1s ease both 400ms;
 	}
 
@@ -62,49 +64,39 @@ header {
 
 @keyframes header {
 	from {
-		height 	: 50px;
+		//height 	: 100%;
 	}
 	to {
-		height 	: 95px;
+		//height 	: 95px;
 	}
 }
 
 @keyframes logo {
 	from {
-		right 	: 50px;
-		opacity : 0;
+		//width 	 	: 10%;
+		transform 	: translateX(50%) translateY(-50%);
 	}
 	to {
-		right 	: 0;
-		opacity : 1;
+		//width 	 	: 35px;
+		transform 	: translateX(-50%) translateY(-50%);
 	}
 }
 
 @keyframes title {
 	from {
-		left	: 50px;
-		opacity : 0;
+		left	: -150px;
 	}
 	to {
 		left 	: 0;
-		opacity : 1;
 	}
 }
 
-@keyframes l-e {
-	0% {
-		left 		: 50%;
-	}
-	100% {
-		left 		: 0;
-	}
-}
 
 @keyframes t-e {
 	0% {
-		right 		: 50%;
+		transform  	: translateX(-50%);
 	}
 	100% {
-		right 		: 0;
+		transform  	: translateX(0);
 	}
 }

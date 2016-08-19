@@ -7,31 +7,19 @@ main {
 	overflow 	: auto;
 	-webkit-overflow-scrolling: touch;
 
-	&:before {
-		content 		: '';
-		background 		: rgba($color-black, .6);
-		z-index 		: 2;
-		//animation 	 	: background 1s ease both;
-		@include positioner();
-	}
 
-	&:after {
-		content 	 	: '';
-		background   	: url('../media/backdrop.jpg') no-repeat top center;
-		background-size : cover;
-		animation 	 	: background 5s ease both;
-		z-index 		: 1;
-		@include positioner();
-	}
+
 
 }
 
 
 @keyframes background {
 	0% {
+		transform 		: scale(1.2);
 		opacity 		: 0;
 	}
 	100% {
+		transform 		: scale(1);
 		opacity 		: 1;
 	}
 }

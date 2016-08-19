@@ -1,9 +1,39 @@
 section {
 	width    	: 100%;
 	position 	: relative;
-	//top 		: 50%;
-	//transform 	: translateY(-50%);
+	height 		: 100%;
 	z-index  	: 2;
-	padding 	: 95px 0 20px;
 	text-align 	: center;
+}
+
+section.landing {
+	&:before {
+		content 		: '';
+		background 		: rgba($color-black, .6);
+		z-index 		: 2;
+		//animation 	 	: background 1s ease both;
+		@include positioner();
+	}
+
+
+	.video & {
+		&:after {
+			display: none;
+		}
+	}
+
+	&:after {
+		content 	 	: '';
+		background   	: url('../media/backdrop.jpg') no-repeat top center;
+		background-size : cover;
+		animation 	 	: background 5s ease both;
+		z-index 		: 1;
+		@include positioner();
+	}
+}
+
+
+section.pins {
+	height 		: auto;
+	background 	: white url("../media/map-pattern.jpg") repeat;
 }
